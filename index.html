@@ -1,79 +1,120 @@
 <!DOCTYPE html>
-<html>
+<!-- saved from url=(0076)file:///C:/Users/Apple/Desktop/2048%E8%8D%AF%E5%AD%A6%E5%A5%B3%E7%A5%9E.html -->
+<html lang="en" manifest="cache.appcache"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Bear-adventure : ">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<title>大熊奇遇記</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-    <title>Bear-adventure</title>
-  </head>
+<body>
+<div class="cover" align=center>
+		<img src="./img/cover.png" title="cover" />
+	</div>
 
-  <body>
+  <div class="container">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/xiongzhp/Bear-Adventure">View on GitHub</a>
+    <!-- Start Screen -->
+    <div id="start_screen">
+      <h1 id="title">大熊奇遇記</h1>
+      <h3 id="credits">
+        by
+        <a href="http://academiax.net">academiax</a>
+      </h3>
+      <h3 id="last_score"></h3>
+      <h3 id="high_score"></h3>
 
-          <h1 id="project_title">Bear-adventure</h1>
-          <h2 id="project_tagline"></h2>
+      <div class="controls"></div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/xiongzhp/Bear-Adventure/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/xiongzhp/Bear-Adventure/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+      <div class="options">
+        <ul>
+          <li><a href="javascript:void(0);" id="start_game">start</a></li>
+          <li><a href="javascript:void(0);" target="_blank" id="tweet">tweet</a></li>
+          <li><a href="javascript:void(0);" target="_blank" id="fb">fb like</a></li>
+        </ul>
+      </div>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Bear-adventure maintained by <a href="https://github.com/xiongzhp">xiongzhp</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <!-- /Start Screen -->
+  
+    <!-- Loading sounds -->
+    <audio id="start" loop>
+      <source src="sound/pappu-pakia2.3.ogg"  type="audio/ogg">
+      <source src="sound/pappu-pakia2.3.mp3"  type="audio/mp3">
+    </audio>
     
+    <audio id="angry_jump">
+      <source src="sound/jump1.ogg" type="audio/ogg">
+      <source src="sound/jump1.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="sad_jump">
+      <source src="sound/jump2.ogg" type="audio/ogg">
+      <source src="sound/jump2.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="happy_jump">
+      <source src="sound/jump3.ogg" type="audio/ogg">
+      <source src="sound/jump3.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="flap">
+      <source src="sound/flap.ogg" type="audio/ogg">
+      <source src="sound/flap.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="ting">
+      <source src="sound/ting.ogg" type="audio/ogg">
+      <source src="sound/ting.mp3" type="audio/mp3">
+    </audio>
 
-  </body>
+    <canvas id="game_bg"></canvas>
+    <canvas id="game_main"></canvas>
+
+    <div id="score_board">0</div>
+
+    <div id="invincible_timer">
+      <div id="invincible_loader"></div>
+    </div>
+
+    <a href="javascript:void(0)" id="mute"></a>
+    
+    <!-- Loading Screen -->
+    <div id="loading">
+      <p id="loadText">Loading...</p>
+      <div id="barCont">
+        <div id="bar"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="fps_count"></div>
+  
+  
+  <!-- Facebook --> 
+  <div class="share-button"><div id="fb-root"></div>
+  <fb:like send="false" layout="button_count" width="450" show_faces="false"></fb:like>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=190502394323833";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>  
+  </div>
+
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <script>window.mit = window.mit || {};</script>
+  <script src="js/utils.js"></script>
+  <script src="js/backgrounds.js"></script>
+  <script src="js/forks.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/collectibles.js"></script>
+  <script src="js/pappu.js"></script>
+  <script src="js/pakia.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/loader.js"></script>
+
+</body>
 </html>
