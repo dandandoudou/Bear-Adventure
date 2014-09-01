@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)file:///C:/Users/Apple/Desktop/2048%E8%8D%AF%E5%AD%A6%E5%A5%B3%E7%A5%9E.html -->
+<html lang="en" manifest="cache.appcache"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+
+<title>大熊奇遇記</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<div class="cover" align=center>
+		<img src="./img/cover.png" title="cover" />
+	</div>
+
+  <div class="container">
+
+    <!-- Start Screen -->
+    <div id="start_screen">
+      <h1 id="title">大熊奇遇記</h1>
+      <h3 id="credits">
+        by
+        <a href="http://academiax.net">academiax</a>
+      </h3>
+      <h3 id="last_score"></h3>
+      <h3 id="high_score"></h3>
+
+      <div class="controls"></div>
+
+      <div class="options">
+        <ul>
+          <li><a href="javascript:void(0);" id="start_game">start</a></li>
+          <li><a href="javascript:void(0);" target="_blank" id="tweet">tweet</a></li>
+          <li><a href="javascript:void(0);" target="_blank" id="fb">fb like</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- /Start Screen -->
+  
+    <!-- Loading sounds -->
+    <audio id="start" loop>
+      <source src="sound/pappu-pakia2.3.ogg"  type="audio/ogg">
+      <source src="sound/pappu-pakia2.3.mp3"  type="audio/mp3">
+    </audio>
+    
+    <audio id="angry_jump">
+      <source src="sound/jump1.ogg" type="audio/ogg">
+      <source src="sound/jump1.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="sad_jump">
+      <source src="sound/jump2.ogg" type="audio/ogg">
+      <source src="sound/jump2.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="happy_jump">
+      <source src="sound/jump3.ogg" type="audio/ogg">
+      <source src="sound/jump3.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="flap">
+      <source src="sound/flap.ogg" type="audio/ogg">
+      <source src="sound/flap.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="ting">
+      <source src="sound/ting.ogg" type="audio/ogg">
+      <source src="sound/ting.mp3" type="audio/mp3">
+    </audio>
+
+    <canvas id="game_bg"></canvas>
+    <canvas id="game_main"></canvas>
+
+    <div id="score_board">0</div>
+
+    <div id="invincible_timer">
+      <div id="invincible_loader"></div>
+    </div>
+
+    <a href="javascript:void(0)" id="mute"></a>
+    
+    <!-- Loading Screen -->
+    <div id="loading">
+      <p id="loadText">Loading...</p>
+      <div id="barCont">
+        <div id="bar"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="fps_count"></div>
+  
+  
+  <!-- Facebook --> 
+  <div class="share-button"><div id="fb-root"></div>
+  <fb:like send="false" layout="button_count" width="450" show_faces="false"></fb:like>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=190502394323833";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>  
+  </div>
+
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <script>window.mit = window.mit || {};</script>
+  <script src="js/utils.js"></script>
+  <script src="js/backgrounds.js"></script>
+  <script src="js/forks.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/collectibles.js"></script>
+  <script src="js/pappu.js"></script>
+  <script src="js/pakia.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/loader.js"></script>
+
+</body>
+</html>
